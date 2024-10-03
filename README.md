@@ -1,6 +1,5 @@
 # Status
 ![Build Windows](https://github.com/Azenris/to_png/actions/workflows/build-windows.yml/badge.svg)
-![Build Ubuntu](https://github.com/Azenris/to_png/actions/workflows/build-ubuntu.yml/badge.svg)
 
 # What does it do?
 Convert images to png files.
