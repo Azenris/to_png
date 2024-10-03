@@ -36,11 +36,25 @@ int main( int argc, char *argv[] )
 
 		strcpy( filename, argv[ input_index ] );
 
-		size_t len = strlen( filename );
-		filename[ len - 3 ] = 'p';
-		filename[ len - 2 ] = 'n';
-		filename[ len - 1 ] = 'g';
-		filename[ len ] = '\0';
+		int len = (int)strlen( filename );
+		int dot_index = -1;
+
+		for ( int string_index = len - 1; string_index >= 0; --string_index )
+		{
+			if ( filename[ string_index ] == '.' )
+			{
+				dot_index = string_index;
+				break;
+			}
+		}
+
+		if ( dot_index == -1 )
+			dot_index = len - 1;
+
+		filename[ dot_index + 1 ] = 'p';
+		filename[ dot_index + 2 ] = 'n';
+		filename[ dot_index + 3 ] = 'g';
+		filename[ dot_index + 4 ] = '\0';
 
 		fprintf( stdout, "Creating file: %s", filename );
 
